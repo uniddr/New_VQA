@@ -19,9 +19,9 @@ def pop(model):
         if not model.layers:
             model.outputs = []
             model.inbound_nodes = []
-            model.outbound_nodes = []
+            model._outbound_nodes = []
         else:
-            model.layers[-1].outbound_nodes = []
+            model.layers[-1]._outbound_nodes = []
             model.outputs = [model.layers[-1].output]
         model.built = False
 
